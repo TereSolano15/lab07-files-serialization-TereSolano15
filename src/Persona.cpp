@@ -4,14 +4,14 @@
 
 #include "Persona.h"
 
-Persona::Persona(const std::string &name, int age, int documentId) : name(name), age(age), documentId(documentId) {}
+Persona::Persona(int id, int age, const string &name) : id(id), age(age), name(name) {}
 
-const std::string &Persona::getName() const {
-    return name;
+int Persona::getId() const {
+    return id;
 }
 
-void Persona::setName(const std::string &name) {
-    Persona::name = name;
+void Persona::setId(int id) {
+    Persona::id = id;
 }
 
 int Persona::getAge() const {
@@ -22,10 +22,20 @@ void Persona::setAge(int age) {
     Persona::age = age;
 }
 
-int Persona::getDocumentId() const {
-    return documentId;
+const string &Persona::getName() const {
+    return name;
 }
 
-void Persona::setDocumentId(int documentId) {
-    Persona::documentId = documentId;
+void Persona::setName(const string &name) {
+    Persona::name = name;
+}
+
+string Persona::toString() {
+    stringstream s;
+
+    s<< "\t id: " <<this->id<<endl;
+    s<< "\t age: "<<this->age<<endl;
+    s<< "\t name: "<<this->name<<endl;
+
+    return s.str();
 }

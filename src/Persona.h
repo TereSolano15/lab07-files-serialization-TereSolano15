@@ -5,33 +5,35 @@
 #ifndef MY_PROJECT_NAME_PERSONA_H
 #define MY_PROJECT_NAME_PERSONA_H
 
-
 #include <string>
 #include <ostream>
+#include <sstream>
+using namespace std;
 
 class Persona {
+private:
+    int id;
+    int age;
+    string name;
+
 public:
 
-    Persona(const std::string &name, int age, int documentId);
+    Persona(int id, int age, const string &name);
 
-    const std::string &getName() const;
+    int getId() const;
 
-    void setName(const std::string &name);
+    void setId(int id);
 
     int getAge() const;
 
     void setAge(int age);
 
-    int getDocumentId() const;
+    const string &getName() const;
 
-    void setDocumentId(int documentId);
+    void setName(const string &name);
 
+    string toString();
 
-private:
-    std::string name;
-    int age;
-    int documentId;
 };
-
 
 #endif //MY_PROJECT_NAME_PERSONA_H
