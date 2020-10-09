@@ -2,7 +2,6 @@
 // Created by Tere Solano on 5/10/2020.
 //
 #include "IPersonSave.h"
-#include "Persona.h"
 #include "SaveBinary.h"
 #include "SaveJson.h"
 #include "PersonaManager.h"
