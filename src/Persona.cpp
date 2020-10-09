@@ -4,37 +4,28 @@
 
 #include "Persona.h"
 
-Person::Person() {}
+Persona::Persona(const std::string &name, int age, int documentId) : name(name), age(age), documentId(documentId) {}
 
-Person::Person(const std::string &firstName, const std::string &lastName, int documentId) : firstName(firstName),
-                                                                                            lastName(lastName),
-                                                                                            documentId(documentId) {}
-
-const std::string &Person::getFirstName() const {
-    return firstName;
+const std::string &Persona::getName() const {
+    return name;
 }
 
-void Person::setFirstName(const std::string &firstName) {
-    Person::firstName = firstName;
+void Persona::setName(const std::string &name) {
+    Persona::name = name;
 }
 
-const std::string &Person::getLastName() const {
-    return lastName;
+int Persona::getAge() const {
+    return age;
 }
 
-void Person::setLastName(const std::string &lastName) {
-    Person::lastName = lastName;
+void Persona::setAge(int age) {
+    Persona::age = age;
 }
 
-int Person::getDocumentId() const {
+int Persona::getDocumentId() const {
     return documentId;
 }
 
-void Person::setDocumentId(int documentId) {
-    Person::documentId = documentId;
-}
-
-
-std::string Person::toString() const {
-    return getFirstName() + " " + getLastName() + "\nDoc Id: " + std::to_string(getDocumentId());
+void Persona::setDocumentId(int documentId) {
+    Persona::documentId = documentId;
 }

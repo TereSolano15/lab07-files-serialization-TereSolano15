@@ -9,29 +9,27 @@
 #include <string>
 #include <ostream>
 
-class Person {
+class Persona {
 public:
 
-    Person();
-    Person(const std::string &firstName, const std::string &lastName, int documentId);
-    virtual ~Person() = default;
+    Persona(const std::string &name, int age, int documentId);
 
-    const std::string &getFirstName() const;
+    const std::string &getName() const;
 
-    void setFirstName(const std::string &firstName);
+    void setName(const std::string &name);
 
-    const std::string &getLastName() const;
+    int getAge() const;
 
-    void setLastName(const std::string &lastName);
+    void setAge(int age);
 
     int getDocumentId() const;
 
     void setDocumentId(int documentId);
 
-    virtual std::string toString() const; // Virtual
+
 private:
-    std::string firstName;
-    std::string lastName;
+    std::string name;
+    int age;
     int documentId;
 };
 
