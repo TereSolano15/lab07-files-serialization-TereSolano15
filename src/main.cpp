@@ -13,7 +13,7 @@ int main(){
 
     vector<Persona> personList;
 
-    PersonManager *manager = new PersonManager();
+    auto *manager = new PersonManager();
 
     IPersonSave *saveBinary = new SaveBinary();
     IPersonSave *saveJson = new SaveJson();

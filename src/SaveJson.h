@@ -14,7 +14,7 @@ class SaveJson: public IPersonSave {
 
 public:
 
-    void save(vector<Persona>) override;
+    string save(const vector<Persona>&) override;
 
 };
 #endif //MY_PROJECT_NAME_SAVEJSON_H

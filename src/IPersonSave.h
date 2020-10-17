@@ -15,8 +15,7 @@ class IPersonSave {
 
 public:
 
-    virtual void save(vector<Persona> persons) = 0;
-
+    virtual string save(const vector<Persona>&) = 0;
 
     virtual ~IPersonSave();
 

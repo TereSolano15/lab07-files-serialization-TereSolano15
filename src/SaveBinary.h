@@ -10,7 +10,7 @@ class SaveBinary: public IPersonSave {
 
 public:
 
-    void save(vector<Persona> person) override;
+    string save(const vector<Persona>&) override;
 
 };
 

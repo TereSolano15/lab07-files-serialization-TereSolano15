@@ -4,20 +4,24 @@
 
 #include "SaveJson.h"
 
-void SaveJson::save(vector<Persona> persons) {
+void to_json(json &_json, const Persona &_person) {
+    _json = json{
+            {"id",   _person.getId()},
+            {"name", _person.getName()},
+    };
+}
+
+void from_json(const json &_json, Persona &_person) {
+    _person.setId(_json.at("id").get<int>());
+    _person.setName(_json.at("name").get<std::string>());
+}
+
+string SaveJson::save(const vector<Persona> & persons) {
 
     ofstream archivo;
 
-    json jsonPerson;
-
-    for(int i = 0; i < persons.size(); i++) {
-
-        jsonPerson["id"] = persons[i].getId();
-        jsonPerson["age"] = persons[i].getAge();
-        jsonPerson["name"] = persons[i].getName();
-    }
-
-    string personaSerealizada = jsonPerson.dump(4);
+    json jsonData(persons);
+    string jsonArray = jsonData.dump();
 
     try{
 
@@ -32,8 +36,8 @@ void SaveJson::save(vector<Persona> persons) {
 
     }
 
-    archivo<< personaSerealizada<<endl;
+    archivo<< jsonArray<<endl;
 
     archivo.close();
-
+    return jsonArray;
 }
