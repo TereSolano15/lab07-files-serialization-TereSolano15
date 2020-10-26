@@ -18,9 +18,9 @@ int main(){
     IPersonSave *saveBinary = new SaveBinary();
     IPersonSave *saveJson = new SaveJson();
 
-    Persona p1(117430751, 21, "Allen");
-    Persona p2(401256379, 44, "Brando Sanderson");
-    Persona p3(501369458, 72, "Robert Jordan");
+    Persona p1(117430751, 21, "Juan");
+    Persona p2(401256379, 44, "Chayanne");
+    Persona p3(501369458, 72, "Rihanna");
 
     manager->setPersonList(personList);
 

@@ -11,11 +11,6 @@ void to_json(json &_json, const Persona &_person) {
     };
 }
 
-void from_json(const json &_json, Persona &_person) {
-    _person.setId(_json.at("id").get<int>());
-    _person.setName(_json.at("name").get<std::string>());
-}
-
 string SaveJson::save(const vector<Persona> & persons) {
 
     ofstream archivo;
