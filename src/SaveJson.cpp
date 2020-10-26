@@ -8,6 +8,7 @@ void to_json(json &_json, const Persona &_person) {
     _json = json{
             {"id",   _person.getId()},
             {"name", _person.getName()},
+            {"age",_person.getAge()}
     };
 }
 
